@@ -1,7 +1,6 @@
 package com.ron.passly.dto;
 
 import com.ron.passly.model.Roles;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class AuthUser {
     private UUID id;
@@ -18,4 +16,13 @@ public class AuthUser {
     private List<Roles> roles;
     private String firstName;
     private String lastName;
+
+    public AuthUser(UUID id, String email, String password, List<Roles> roles, String firstName, String lastName) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
